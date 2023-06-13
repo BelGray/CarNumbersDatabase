@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">База Автомобильных Номеров</string>
+    <string name="car_numbers">Номера автомобиля</string>
+    <string name="search_numbers">Поиск по базе</string>
+    <string name="region_code">Код региона</string>
+    <string name="search_button_text">Искать</string>
+</resources>
