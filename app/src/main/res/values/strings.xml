@@ -4,4 +4,5 @@
     <string name="search_numbers">Поиск по базе</string>
     <string name="region_code">Код региона</string>
     <string name="search_button_text">Искать</string>
+    <string name="add_numbers_button_text">Зарегистрировать номера</string>
 </resources>
