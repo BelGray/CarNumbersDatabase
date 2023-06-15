@@ -1,86 +1,103 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity"
-    >
+    android:padding="16dp"
+    tools:context=".MainActivity">
+
+
+    <LinearLayout
+        android:id="@+id/topMainView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="120dp">
+
+            <TextView
+                android:id="@+id/searchNumbersTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginStart="85dp"
+                android:layout_marginTop="40dp"
+                android:text="@string/search_numbers"
+                android:textColor="@color/blue"
+                android:textSize="35sp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
+            android:orientation="vertical"
+            app:boxBackgroundColor="@color/light_blue_for_text_fields"
+            app:boxStrokeColor="@color/blue"
+            app:counterEnabled="true"
+            app:counterMaxLength="6"
+            app:counterTextColor="@color/blue"
+            app:errorEnabled="true">
+
+            <EditText
+                android:id="@+id/searchCarNumbersEditText"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:hint="@string/car_numbers"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
+            android:orientation="vertical"
+            app:boxBackgroundColor="@color/light_blue_for_text_fields"
+            app:boxStrokeColor="@color/blue"
+            app:counterEnabled="true"
+            app:counterMaxLength="3"
+            app:counterTextColor="@color/blue"
+            app:errorEnabled="true">
+
+            <EditText
+                android:id="@+id/searchRegionCodeEditText"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:hint="@string/region_code"
+                android:inputType="number"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </LinearLayout>
 
     <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="120dp">
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true">
 
-        <TextView
-            android:id="@+id/searchNumbersTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:layout_marginStart="85dp"
-            android:layout_marginTop="40dp"
-            android:text="@string/search_numbers"
-            android:textColor="@color/blue"
-            android:textSize="35sp"
-            android:textStyle="bold" />
+        <Button
+            android:id="@+id/searchButton"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:text="@string/search_button_text"
+            android:textColor="@color/white" />
+
+        <Button
+            android:id="@+id/addNumbersButton"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_below="@id/searchButton"
+            android:text="@string/add_numbers_button_text"
+            android:textColor="@color/white" />
+
     </RelativeLayout>
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:counterEnabled="true"
-        app:counterMaxLength="6"
-        app:counterTextColor="@color/blue"
-        app:errorEnabled="true"
-        android:layout_marginTop="0dp"
-        android:orientation="vertical"
-        app:boxBackgroundColor="@color/light_blue_for_text_fields"
-        app:boxStrokeColor="@color/blue"
-        >
-        <EditText
-            android:id="@+id/searchCarNumbersEditText"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:hint="@string/car_numbers"
-            android:textColor="@color/black"
-            android:textStyle="bold"
-            />
-    </com.google.android.material.textfield.TextInputLayout>
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:counterEnabled="true"
-        app:counterMaxLength="3"
-        app:counterTextColor="@color/blue"
-        app:errorEnabled="true"
-        android:layout_marginTop="0dp"
-        app:boxBackgroundColor="@color/light_blue_for_text_fields"
-        android:orientation="vertical"
-        app:boxStrokeColor="@color/blue"
-        >
-        <EditText
-            android:id="@+id/searchRegionCodeEditText"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:hint="@string/region_code"
-            android:textColor="@color/black"
-            android:textStyle="bold"
-            android:inputType="number"
-            />
-    </com.google.android.material.textfield.TextInputLayout>
 
-    <Button
-        android:id="@+id/searchButton"
-        android:layout_width="match_parent"
-        android:layout_height="55dp"
-        android:text="@string/search_button_text"
-        android:textColor="@color/white" />
-    <Button
-        android:id="@+id/addNumbersButton"
-        android:layout_width="match_parent"
-        android:layout_height="55dp"
-        android:text="@string/add_numbers_button_text"
-        android:textColor="@color/white" />
-
-</LinearLayout>
+</RelativeLayout>
