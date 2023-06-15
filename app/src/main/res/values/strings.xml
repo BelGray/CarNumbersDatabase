@@ -14,6 +14,7 @@
     <string name="person_fine_is_payed">Оплачен</string>
     <string name="person_fine_is_not_payed">Не оплачен</string>
     <string name="person_fine_confirm_pay">Подтвердить оплату</string>
+    <string name="person_address">Адрес *</string>
     <string name="person_remove_license">Лишить прав</string>
     <string name="person_give_license">Выдать права</string>
     <string name="save_button">Сохранить</string>
