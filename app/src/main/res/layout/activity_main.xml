@@ -12,17 +12,18 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="120dp">
+
         <TextView
+            android:id="@+id/searchNumbersTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/search_numbers"
-            android:layout_marginTop="40dp"
-            android:layout_marginStart="85dp"
-            android:textSize="35sp"
-            android:textStyle="bold"
-            android:textColor="@color/blue"
             android:layout_centerInParent="true"
-            />
+            android:layout_marginStart="85dp"
+            android:layout_marginTop="40dp"
+            android:text="@string/search_numbers"
+            android:textColor="@color/blue"
+            android:textSize="35sp"
+            android:textStyle="bold" />
     </RelativeLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -38,6 +39,7 @@
         app:boxStrokeColor="@color/blue"
         >
         <EditText
+            android:id="@+id/searchCarNumbersEditText"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:hint="@string/car_numbers"
@@ -58,6 +60,7 @@
         app:boxStrokeColor="@color/blue"
         >
         <EditText
+            android:id="@+id/searchRegionCodeEditText"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:hint="@string/region_code"
@@ -68,11 +71,13 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
+        android:id="@+id/searchButton"
         android:layout_width="match_parent"
         android:layout_height="55dp"
         android:text="@string/search_button_text"
         android:textColor="@color/white" />
     <Button
+        android:id="@+id/addNumbersButton"
         android:layout_width="match_parent"
         android:layout_height="55dp"
         android:text="@string/add_numbers_button_text"
