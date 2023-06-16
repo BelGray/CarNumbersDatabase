@@ -10,19 +10,48 @@ import java.io.Serializable;
 public class Fines implements Serializable {
 
     @PrimaryKey(autoGenerate = true)
-    int id = 0;
+    private int id = 0;
 
     @ColumnInfo(name = "carNumbersWithRegionCode")
-    String carNumbersWithRegionCode;
+    private String carNumbersWithRegionCode;
 
     @ColumnInfo(name = "fineText")
-    String fineText;
+    private String fineText;
 
     @ColumnInfo(name = "fineAmount")
-    String fineAmount;
+    private String fineAmount;
 
     @ColumnInfo(name = "fineIsPayed")
-    boolean fineIsPayed;
+    private boolean fineIsPayed;
 
+    public Fines(String carNumbersWithRegionCode, String fineText, String fineAmount, boolean fineIsPayed) {
+        this.carNumbersWithRegionCode = carNumbersWithRegionCode;
+        this.fineText = fineText;
+        this.fineAmount = fineAmount;
+        this.fineIsPayed = fineIsPayed;
+    }
 
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public String getCarNumbersWithRegionCode() {
+        return carNumbersWithRegionCode;
+    }
+
+    public String getFineText() {
+        return fineText;
+    }
+
+    public String getFineAmount() {
+        return fineAmount;
+    }
+
+    public boolean isFineIsPayed() {
+        return fineIsPayed;
+    }
 }
