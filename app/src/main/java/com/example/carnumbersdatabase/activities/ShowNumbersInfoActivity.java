@@ -1,9 +1,11 @@
-package com.example.carnumbersdatabase;
+package com.example.carnumbersdatabase.activities;
 
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.carnumbersdatabase.R;
 
 public class ShowNumbersInfoActivity extends AppCompatActivity {
 

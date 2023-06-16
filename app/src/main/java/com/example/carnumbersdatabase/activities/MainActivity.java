@@ -1,4 +1,4 @@
-package com.example.carnumbersdatabase;
+package com.example.carnumbersdatabase.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,6 +8,8 @@ import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.carnumbersdatabase.R;
 
 public class MainActivity extends AppCompatActivity {
 
