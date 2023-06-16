@@ -25,4 +25,5 @@
     <string name="person_loading_status">Статус гражданина</string>
     <string name="person_transport_name">Транспортное средство *</string>
     <string name="person_without_license_warning">Внимание! У гражданина отсутствует водительское удостоверение</string>
+    <string name="delete">Удалить</string>
 </resources>
