@@ -10,6 +10,7 @@
     <string name="person_birthdate">Дата рождения (необязательно)</string>
     <string name="person_fines">Штрафы</string>
     <string name="person_to_fine">Оштрафовать</string>
+    <string name="person_phone_number">Номер телефона *</string>
     <string name="person_fine_text">Нарушение</string>
     <string name="person_fine_amount">Сумма к оплате</string>
     <string name="person_fine_is_payed">Оплачен</string>
