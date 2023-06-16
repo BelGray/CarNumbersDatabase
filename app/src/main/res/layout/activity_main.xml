@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="16dp"
-    tools:context=".MainActivity">
+    tools:context=".MainActivityBad">
 
 
     <LinearLayout
@@ -44,7 +44,7 @@
             app:counterTextColor="@color/blue"
             app:errorEnabled="true">
 
-            <EditText
+            <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/searchCarNumbersEditText"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
@@ -65,7 +65,7 @@
             app:counterTextColor="@color/blue"
             app:errorEnabled="true">
 
-            <EditText
+            <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/searchRegionCodeEditText"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"

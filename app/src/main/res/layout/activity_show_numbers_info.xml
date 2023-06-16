@@ -28,7 +28,7 @@
         app:boxBackgroundColor="@color/light_blue_for_text_fields"
         app:errorEnabled="true">
 
-        <EditText
+        <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/personNameEditText"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -47,7 +47,7 @@
         app:boxBackgroundColor="@color/light_blue_for_text_fields"
         app:errorEnabled="true">
 
-        <EditText
+        <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/personLastnameEditText"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -66,7 +66,7 @@
         app:boxBackgroundColor="@color/light_blue_for_text_fields"
         app:errorEnabled="true">
 
-        <EditText
+        <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/personBirthdateEditText"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -86,7 +86,7 @@
         app:boxBackgroundColor="@color/light_blue_for_text_fields"
         app:errorEnabled="true">
 
-        <EditText
+        <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/personAddressEditText"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -103,7 +103,7 @@
         app:boxBackgroundColor="@color/light_blue_for_text_fields"
         app:errorEnabled="true">
 
-        <EditText
+        <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/personTransportNameEditText"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -127,7 +127,7 @@
         app:counterTextColor="@color/blue"
         app:errorEnabled="true">
 
-        <EditText
+        <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/personCarNumbersEditText"
             android:layout_width="match_parent"
             android:layout_height="60dp"
@@ -148,7 +148,7 @@
         app:counterTextColor="@color/blue"
         app:errorEnabled="true">
 
-        <EditText
+        <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/personRegionCodeEditText"
             android:layout_width="match_parent"
             android:layout_height="60dp"
