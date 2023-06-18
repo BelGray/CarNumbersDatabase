@@ -1,5 +1,6 @@
 package com.example.carnumbersdatabase.database;
 
+import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
 import androidx.room.Delete;
 import androidx.room.Insert;
@@ -18,6 +19,6 @@ public interface FinesDao {
     void deletePerson(String carNumbersWithRegionCode);
 
     @Query("SELECT * FROM fines WHERE carNumbersWithRegionCode LIKE :carNumbersWithRegionCode")
-    List<Fines> getFines(String carNumbersWithRegionCode);
+    LiveData<List<Fines>> getFines(String carNumbersWithRegionCode);
 
 }

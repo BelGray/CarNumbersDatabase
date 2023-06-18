@@ -1,6 +1,7 @@
 package com.example.carnumbersdatabase.database;
 
 
+import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
 import androidx.room.Insert;
 import androidx.room.OnConflictStrategy;
@@ -15,7 +16,7 @@ public interface NumbersDao {
     void deletePerson(String personCarNumbers, int personRegionCode);
 
     @Query("SELECT * FROM numbers WHERE personCarNumbers LIKE :personCarNumbers AND personRegionCode LIKE :personRegionCode")
-    List<Numbers> getPersonByCarNumbers(String personCarNumbers, int personRegionCode);
+    LiveData<List<Numbers>> getPersonByCarNumbers(String personCarNumbers, int personRegionCode);
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     void insert(Numbers numbers);
