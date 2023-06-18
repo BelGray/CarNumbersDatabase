@@ -57,7 +57,7 @@
             android:id="@+id/searchRegionCodeEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="0dp"
+            android:layout_marginTop="5dp"
             android:orientation="vertical"
             app:boxBackgroundColor="@color/light_blue_for_text_fields"
             app:boxStrokeColor="@color/blue"
