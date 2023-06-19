@@ -6,6 +6,7 @@ import androidx.room.Delete;
 import androidx.room.Insert;
 import androidx.room.OnConflictStrategy;
 import androidx.room.Query;
+import androidx.room.Update;
 
 import java.util.List;
 
@@ -20,5 +21,8 @@ public interface FinesDao {
 
     @Query("SELECT * FROM fines WHERE carNumbersWithRegionCode LIKE :carNumbersWithRegionCode")
     LiveData<List<Fines>> getFines(String carNumbersWithRegionCode);
+
+    @Update(onConflict = OnConflictStrategy.ROLLBACK)
+    void update(Fines fines);
 
 }
