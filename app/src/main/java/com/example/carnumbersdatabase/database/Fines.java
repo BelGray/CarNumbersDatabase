@@ -27,12 +27,17 @@ public class Fines implements Serializable {
     @ColumnInfo(name = "fineIsPayed")
     private boolean fineIsPayed;
 
-    public Fines(String fineUuid, String carNumbersWithRegionCode, String fineText, String fineAmount, boolean fineIsPayed) {
+    @ColumnInfo(name = "fineDate")
+    private String fineDate;
+
+
+    public Fines(String fineUuid, String carNumbersWithRegionCode, String fineText, String fineAmount, boolean fineIsPayed, String fineDate) {
         this.fineUuid = fineUuid;
         this.carNumbersWithRegionCode = carNumbersWithRegionCode;
         this.fineText = fineText;
         this.fineAmount = fineAmount;
         this.fineIsPayed = fineIsPayed;
+        this.fineDate = fineDate;
     }
 
     public void setId(int id) {

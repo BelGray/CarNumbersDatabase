@@ -7,6 +7,7 @@
     <string name="add_numbers_button_text">Зарегистрировать номера</string>
     <string name="person_name">Имя *</string>
     <string name="person_lastname">Фамилия *</string>
+    <string name="date">Дата</string>
     <string name="person_birthdate">Дата рождения (необязательно)</string>
     <string name="person_fines">Штрафы</string>
     <string name="person_to_fine">Оштрафовать</string>
