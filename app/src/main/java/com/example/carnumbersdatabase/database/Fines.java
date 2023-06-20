@@ -12,6 +12,9 @@ public class Fines implements Serializable {
     @PrimaryKey(autoGenerate = true)
     private int id = 0;
 
+    @ColumnInfo(name = "fineUuid")
+    private String fineUuid;
+
     @ColumnInfo(name = "carNumbersWithRegionCode")
     private String carNumbersWithRegionCode;
 
@@ -24,7 +27,8 @@ public class Fines implements Serializable {
     @ColumnInfo(name = "fineIsPayed")
     private boolean fineIsPayed;
 
-    public Fines(String carNumbersWithRegionCode, String fineText, String fineAmount, boolean fineIsPayed) {
+    public Fines(String fineUuid, String carNumbersWithRegionCode, String fineText, String fineAmount, boolean fineIsPayed) {
+        this.fineUuid = fineUuid;
         this.carNumbersWithRegionCode = carNumbersWithRegionCode;
         this.fineText = fineText;
         this.fineAmount = fineAmount;
@@ -33,6 +37,10 @@ public class Fines implements Serializable {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public String getFineUuid() {
+        return fineUuid;
     }
 
     public int getId() {
