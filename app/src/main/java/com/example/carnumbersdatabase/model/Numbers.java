@@ -1,4 +1,4 @@
-package com.example.carnumbersdatabase.database;
+package com.example.carnumbersdatabase.model;
 
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;

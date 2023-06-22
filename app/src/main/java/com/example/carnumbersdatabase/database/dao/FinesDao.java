@@ -1,12 +1,13 @@
-package com.example.carnumbersdatabase.database;
+package com.example.carnumbersdatabase.database.dao;
 
 import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
-import androidx.room.Delete;
 import androidx.room.Insert;
 import androidx.room.OnConflictStrategy;
 import androidx.room.Query;
 import androidx.room.Update;
+
+import com.example.carnumbersdatabase.model.Fines;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package com.example.carnumbersdatabase.database;
+package com.example.carnumbersdatabase.model;
 
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
@@ -66,5 +66,9 @@ public class Fines implements Serializable {
 
     public boolean isFineIsPayed() {
         return fineIsPayed;
+    }
+
+    public String getFineDate() {
+        return fineDate;
     }
 }
