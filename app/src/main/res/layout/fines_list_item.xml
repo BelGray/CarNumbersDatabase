@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/finesListCardView"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        app:cardBackgroundColor="@color/light_blue_for_text_fields"
+        >
+
+        <RelativeLayout
+            android:id="@+id/finesListRelativeLayoutInCardView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+
+            <TextView
+                android:id="@+id/fineText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="10dp"
+                android:text="@string/person_fine_text"
+                android:textColor="@color/black"
+                android:textSize="19sp"
+                android:textStyle="bold"
+                />
+
+            <TextView
+                android:id="@+id/fineAmount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="10dp"
+                android:text="@string/person_fine_amount"
+                android:textColor="@color/blue"
+                android:layout_below="@id/fineText"
+                android:textSize="19sp"
+                android:textStyle="bold"
+                />
+
+            <TextView
+                android:id="@+id/fineDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="10dp"
+                android:text="@string/date"
+                android:layout_below="@id/fineAmount"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/person_fine_confirm_pay"
+                android:layout_marginBottom="5dp"
+                android:layout_marginEnd="10dp"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentEnd="true"
+                android:textColor="@color/white"
+                android:visibility="visible"
+                />
+
+            <TextView
+                android:id="@+id/fineIsPayedText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/person_fine_is_payed"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/green"
+                android:layout_marginBottom="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentEnd="true"
+                android:visibility="gone"
+                />
+
+
+        </RelativeLayout>
+
+
+
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>
