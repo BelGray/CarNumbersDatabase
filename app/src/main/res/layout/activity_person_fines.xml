@@ -1,47 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".ui.PersonFinesActivity"
-    android:orientation="vertical">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.PersonFinesActivity">
 
-        <ScrollView
-            android:layout_width="match_parent"
-            android:layout_height="550dp"
-            android:padding="16dp">
-
-
-            <LinearLayout
-                android:id="@+id/finesListLinearLayout"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                >
-
-                <RelativeLayout
-                    android:id="@+id/finesListRelativeLayout"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <TextView
-                        android:id="@+id/finesListTextView"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerInParent="true"
-                        android:text="@string/person_fines"
-                        android:textColor="@color/blue"
-                        android:textSize="40sp"
-                        android:textStyle="bold" />
-
-                </RelativeLayout>
-
-
-
-            </LinearLayout>
-
-        </ScrollView>
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="550dp"
+        android:padding="16dp"
+        tools:listitem="@layout/fine_item" />
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -50,10 +20,10 @@
         android:padding="16dp">
 
         <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:id="@+id/personLicenseRelativeLayout"
-            >
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
             <Button
                 android:id="@+id/personRemoveLicenseButton"
                 android:layout_width="match_parent"
@@ -77,17 +47,17 @@
             android:id="@+id/finesGoBackButton"
             android:layout_width="match_parent"
             android:layout_height="55dp"
-            android:text="@string/go_back_button"
             android:layout_below="@+id/personToFineButton"
+            android:text="@string/go_back_button"
             android:textColor="@color/white" />
 
         <Button
             android:id="@+id/personToFineButton"
             android:layout_width="match_parent"
             android:layout_height="55dp"
+            android:layout_below="@+id/personLicenseRelativeLayout"
             android:backgroundTint="@color/warning_yellow"
             android:text="@string/person_to_fine"
-            android:layout_below="@+id/personLicenseRelativeLayout"
             android:textColor="@color/white" />
 
     </RelativeLayout>

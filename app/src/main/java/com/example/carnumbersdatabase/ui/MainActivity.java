@@ -70,14 +70,11 @@ public class MainActivity extends AppCompatActivity {
             }
 
             if (searchCarNumbersFieldStatusOk && searchRegionCodeFieldStatusOk) {
-                searchNumbersTextView.setText("Поиск по базе");
-                searchNumbersTextView.setTextColor(Color.parseColor("#142899"));
-
                 int region = Integer.parseInt(regionCode);
                 numberViewModel.getPersonByCarNumbers(carNumbers, region).observe(this, numbers -> {
 
                     if (numbers.isEmpty()) {
-                        Toast.makeText(MainActivity.this, "Ничего не найдено!", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(MainActivity.this, "Номеров в базе не обнаружено!", Toast.LENGTH_SHORT).show();
                         return;
                     }
 
