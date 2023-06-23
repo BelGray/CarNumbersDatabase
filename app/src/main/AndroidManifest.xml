@@ -29,6 +29,10 @@
         <activity
             android:name=".ui.ShowNumbersInfoActivity"
             android:exported="true" />
+
+
+        <activity android:name=".ui.PersonFinesActivity" android:exported="true" />
+        <activity android:name=".ui.ToFinePersonActivity" android:exported="true"/>
     </application>
 
 </manifest>
