@@ -35,6 +35,13 @@ public class FineAdapter extends RecyclerView.Adapter<FineAdapter.ViewHolder> {
         holder.fineText.setText(fine.getFineText());
         holder.fineAmount.setText(fine.getFineAmount());
         holder.fineDate.setText(fine.getFineDate());
+        if (fine.isFineIsPayed()){
+            holder.confirmFineIsPayedButton.setVisibility(View.GONE);
+            holder.confirmFineIsPayedTextView.setVisibility(View.VISIBLE);
+        } else {
+            holder.confirmFineIsPayedButton.setVisibility(View.VISIBLE);
+            holder.confirmFineIsPayedTextView.setVisibility(View.GONE);
+        }
 
     }
 
@@ -50,7 +57,7 @@ public class FineAdapter extends RecyclerView.Adapter<FineAdapter.ViewHolder> {
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
-        final TextView fineText, fineAmount, fineDate;
+        final TextView fineText, fineAmount, fineDate, confirmFineIsPayedTextView;
         final Button confirmFineIsPayedButton;
 
         public ViewHolder(@NonNull View itemView) {
@@ -59,6 +66,7 @@ public class FineAdapter extends RecyclerView.Adapter<FineAdapter.ViewHolder> {
             fineAmount = itemView.findViewById(R.id.fineAmount);
             fineDate = itemView.findViewById(R.id.fineDate);
             confirmFineIsPayedButton = itemView.findViewById(R.id.confirmFineIsPayedButton);
+            confirmFineIsPayedTextView = itemView.findViewById(R.id.fineIsPayedText);
 
 
             confirmFineIsPayedButton.setOnClickListener(v -> {

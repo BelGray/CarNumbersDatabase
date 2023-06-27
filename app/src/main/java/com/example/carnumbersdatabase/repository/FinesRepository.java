@@ -40,4 +40,8 @@ public class FinesRepository {
         service.execute(() -> finesDao.update(fines));
     }
 
+    public void setFinePayStatus(int id, boolean payed){
+        service.execute(() -> finesDao.setFinePayStatus(id, payed));
+    }
+
 }

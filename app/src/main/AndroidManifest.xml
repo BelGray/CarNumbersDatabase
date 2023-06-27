@@ -27,11 +27,13 @@
         </activity>
 
         <activity
-            android:name=".ui.ShowNumbersInfoActivity"
+            android:name=".ui.ShowPersonInfoActivity"
             android:exported="true" />
 
 
         <activity android:name=".ui.PersonFinesActivity" android:exported="true" />
+        <activity android:name=".ui.AddPersonInfoActivity" android:exported="true" />
+        <activity android:name=".ui.GoatMainActivity" android:exported="true" />
         <activity android:name=".ui.ToFinePersonActivity" android:exported="true"/>
     </application>
 

@@ -1,6 +1,6 @@
 package com.example.carnumbersdatabase.ui;
 
-import android.graphics.Color;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Button;
@@ -9,17 +9,12 @@ import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.lifecycle.LiveData;
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.example.carnumbersdatabase.R;
-import com.example.carnumbersdatabase.model.Numbers;
-import com.example.carnumbersdatabase.database.NumbersDatabase;
 import com.example.carnumbersdatabase.ui.viewModel.NumberViewModel;
 import com.google.android.material.textfield.TextInputLayout;
 
-import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -52,6 +47,12 @@ public class MainActivity extends AppCompatActivity {
             boolean searchCarNumbersFieldStatusOk;
             boolean searchRegionCodeFieldStatusOk;
 
+            if (carNumbers.equalsIgnoreCase("666") && regionCode.equalsIgnoreCase("666")){
+
+                startActivity(new Intent(MainActivity.this, GoatMainActivity.class));
+
+            }
+
             if (regionCode.isEmpty() || regionCode.length() > 3) {
                 searchRegionCodeFieldStatusOk = false;
                 searchRegionCodeEditText.setError("Некорректный код региона!");
@@ -78,21 +79,67 @@ public class MainActivity extends AppCompatActivity {
                         return;
                     }
 
-                    Log.d("MainActivity", "onCreate: " + numbers);
-                    for (Numbers _numbers : numbers) {
-                        Log.d("MainActivity", "onCreate: " + _numbers.getPersonName());
-                    }
+
+                    Intent goNumbersInfo = new Intent(MainActivity.this, ShowPersonInfoActivity.class);
+                    goNumbersInfo.putExtra("carNumbers", carNumbers);
+                    goNumbersInfo.putExtra("regionCode", regionCode);
+                    goNumbersInfo.putExtra("personName", numbers.get(0).getPersonName());
+                    goNumbersInfo.putExtra("personLastname", numbers.get(0).getPersonLastname());
+                    goNumbersInfo.putExtra("personBirthdate", numbers.get(0).getPersonBirthdate());
+                    goNumbersInfo.putExtra("personAddress", numbers.get(0).getPersonAddress());
+                    goNumbersInfo.putExtra("personTransportName", numbers.get(0).getPersonTransportName());
+                    goNumbersInfo.putExtra("personPhoneNumber", numbers.get(0).getPersonPhoneNumber());
+                    goNumbersInfo.putExtra("personHasLicense", numbers.get(0).isPersonHasLicense());
+                    startActivity(goNumbersInfo);
+
                 });
             }
-
-
-            //Intent goNumbersInfo = new Intent(MainActivity.this, ShowNumbersInfoActivity.class);
-            //startActivity(goNumbersInfo);
         });
 
         addNumbersButton.setOnClickListener(v -> {
 
-            Toast.makeText(MainActivity.this, "ПРОИЗОШЛО НАЖАТИЕ НА КНОПКУ!", Toast.LENGTH_SHORT).show();
+            String regionCode = searchRegionCodeEditText.getEditText().getText().toString().trim();
+            String carNumbers = searchCarNumbersEditText.getEditText().getText().toString().trim();
+
+            Matcher carNumbersCyrillic = cyrillic.matcher(carNumbers);
+            Matcher carNumbersLatin = latin.matcher(carNumbers);
+
+            boolean searchCarNumbersFieldStatusOk;
+            boolean searchRegionCodeFieldStatusOk;
+
+            if (regionCode.isEmpty() || regionCode.length() > 3) {
+                searchRegionCodeFieldStatusOk = false;
+                searchRegionCodeEditText.setError("Некорректный код региона!");
+            } else {
+                searchRegionCodeFieldStatusOk = true;
+                searchRegionCodeEditText.setError(null);
+            }
+
+
+            if (carNumbers.length() != 6 || !carNumbersCyrillic.find() && carNumbersLatin.find() || carNumbersLatin.find() || !(carNumbers.substring(1, 4).matches(rangeRegex)) || carNumbers.matches(rangeRegex)) {
+                searchCarNumbersFieldStatusOk = false;
+                searchCarNumbersEditText.setError("Некорректные номера автомобиля. Пример: C777PУ");
+            } else {
+                searchCarNumbersFieldStatusOk = true;
+                searchCarNumbersEditText.setError(null);
+            }
+
+            if (searchCarNumbersFieldStatusOk && searchRegionCodeFieldStatusOk) {
+                int region = Integer.parseInt(regionCode);
+                numberViewModel.getPersonByCarNumbers(carNumbers.toUpperCase(), region).observe(this, numbers -> {
+
+                    if (numbers.isEmpty()) {
+                        Intent goNumbersInfo = new Intent(MainActivity.this, AddPersonInfoActivity.class);
+                        goNumbersInfo.putExtra("carNumbers", carNumbers);
+                        goNumbersInfo.putExtra("regionCode", regionCode);
+                        startActivity(goNumbersInfo);
+                        return;
+                    }
+
+                    Toast.makeText(MainActivity.this, "Номера уже существуют в базе!", Toast.LENGTH_SHORT).show();
+
+                });
+            }
 
         });
 

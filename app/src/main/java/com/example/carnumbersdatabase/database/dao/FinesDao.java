@@ -26,4 +26,7 @@ public interface FinesDao {
     @Update(onConflict = OnConflictStrategy.ROLLBACK)
     void update(Fines fines);
 
+    @Query("UPDATE fines SET fineIsPayed = :payed WHERE id LIKE :id")
+    void setFinePayStatus(int id, boolean payed);
+
 }

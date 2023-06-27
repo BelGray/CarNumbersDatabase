@@ -10,7 +10,7 @@ import java.io.Serializable;
 public class Numbers implements Serializable {
 
     @PrimaryKey(autoGenerate = true)
-    private int id = 0;
+    private int id = 1;
 
     @ColumnInfo(name = "personName")
     private String personName;
@@ -36,7 +36,10 @@ public class Numbers implements Serializable {
     @ColumnInfo(name="personPhoneNumber")
     private String personPhoneNumber;
 
-    public Numbers(String personName, String personLastname, String personBirthdate, String personAddress, String personTransportName, String personCarNumbers, int personRegionCode, String personPhoneNumber) {
+    @ColumnInfo(name="personHasLicense")
+    private boolean personHasLicense;
+
+    public Numbers(String personName, String personLastname, String personBirthdate, String personAddress, String personTransportName, String personCarNumbers, int personRegionCode, String personPhoneNumber, boolean personHasLicense) {
         this.personName = personName;
         this.personLastname = personLastname;
         this.personBirthdate = personBirthdate;
@@ -45,8 +48,13 @@ public class Numbers implements Serializable {
         this.personCarNumbers = personCarNumbers;
         this.personRegionCode = personRegionCode;
         this.personPhoneNumber = personPhoneNumber;
+        this.personHasLicense = personHasLicense;
     }
 
+
+    public boolean isPersonHasLicense() {
+        return personHasLicense;
+    }
 
     public int getId() {
         return id;

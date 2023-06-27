@@ -7,12 +7,33 @@
     android:orientation="vertical"
     tools:context=".ui.PersonFinesActivity">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/finesRecyclerView"
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="550dp"
         android:padding="16dp"
-        tools:listitem="@layout/fine_item" />
+        >
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/finesRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:listitem="@layout/fine_item"
+            android:visibility="gone"
+            />
+
+        <ImageView
+            android:id="@+id/noFinesImageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/no_fines_v2"
+            android:layout_centerInParent="true"
+            android:visibility="visible"
+            />
+
+    </RelativeLayout>
+
+
 
     <RelativeLayout
         android:layout_width="match_parent"

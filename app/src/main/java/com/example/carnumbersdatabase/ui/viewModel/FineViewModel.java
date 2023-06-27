@@ -34,6 +34,10 @@ public class FineViewModel extends AndroidViewModel {
         return finesRepository.getFines(carNumbersWithRegionCode);
     }
 
+    public void setFinePayStatus(int id, boolean payed){
+        finesRepository.setFinePayStatus(id, payed);
+    }
+
     public void update(Fines fines){
         finesRepository.update(fines);
     }

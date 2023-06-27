@@ -38,5 +38,14 @@ public class NumberRepository {
         return numbersDao.getPersonByCarNumbers(personCarNumbers, personRegionCode);
     }
 
+    public void setPersonWithLicense(String personCarNumbers, int personRegionCode, boolean personHasLicense){
+        service.execute(() -> numbersDao.setPersonWithLicense(personCarNumbers, personRegionCode, personHasLicense));
+    }
+
+    public void updatePersonByCarNumbers(String personName, String personLastname, String personBirthdate, String personAddress, String personTransport, String carNumbers, int regionCode, String personPhone, boolean personHasLicense){
+        service.execute(() -> numbersDao.updatePersonByCarNumbers(personName, personLastname, personBirthdate, personAddress, personTransport, carNumbers, regionCode, personPhone, personHasLicense));
+    }
+
+
 
 }

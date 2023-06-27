@@ -52,9 +52,18 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
+        android:id="@+id/goBackButton"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:text="@string/go_back_button"
+        android:textColor="@color/white"
+        />
+
+    <Button
         android:id="@+id/toFineButton"
         android:layout_width="match_parent"
         android:layout_height="55dp"
+        android:backgroundTint="@color/warning_red"
         android:text="@string/person_to_fine"
         android:textColor="@color/white"
         />

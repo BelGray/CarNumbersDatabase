@@ -37,5 +37,13 @@ public class NumberViewModel extends AndroidViewModel {
         return numberRepository.getPersonByCarNumbers(personCarNumbers, personRegionCode);
     }
 
+    public void setPersonWithLicense(String personCarNumbers, int personRegionCode, boolean personHasLicense){
+        numberRepository.setPersonWithLicense(personCarNumbers, personRegionCode, personHasLicense);
+    }
+
+    public void updatePersonByCarNumbers(String personName, String personLastname, String personBirthdate, String personAddress, String personTransport, String carNumbers, int regionCode, String personPhone, boolean personHasLicense){
+        numberRepository.updatePersonByCarNumbers(personName, personLastname, personBirthdate, personAddress, personTransport, carNumbers, regionCode, personPhone, personHasLicense);
+    }
+
 
 }
