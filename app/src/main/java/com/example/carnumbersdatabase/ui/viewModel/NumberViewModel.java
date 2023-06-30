@@ -37,6 +37,10 @@ public class NumberViewModel extends AndroidViewModel {
         return numberRepository.getPersonByCarNumbers(personCarNumbers, personRegionCode);
     }
 
+    public LiveData<List<Numbers>> getAllNumbers() {
+        return numberRepository.getAllNumbers();
+    }
+
     public void setPersonWithLicense(String personCarNumbers, int personRegionCode, boolean personHasLicense){
         numberRepository.setPersonWithLicense(personCarNumbers, personRegionCode, personHasLicense);
     }

@@ -97,6 +97,15 @@
             android:text="@string/add_numbers_button_text"
             android:textColor="@color/white" />
 
+        <Button
+            android:id="@+id/numbersListButton"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_below="@id/addNumbersButton"
+            android:text="@string/numbersList"
+            android:backgroundTint="@color/light_blue_for_text_fields"
+            />
+
     </RelativeLayout>
 
 

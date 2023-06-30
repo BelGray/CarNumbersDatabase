@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_alignParentBottom="true"
+    android:padding="16dp"
+    tools:context=".ui.NumbersListActivity"
+    >
+    
+    <RelativeLayout
+        android:id="@+id/numbersListRelativeLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="640dp"
+
+        >
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/numbersListRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:listitem="@layout/numbers_item"
+            android:visibility="visible"
+            />
+
+        <ImageView
+            android:id="@+id/databaseIsEmptyImageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:src="@drawable/database_is_empty"
+            android:visibility="gone"
+            />
+
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/goBackButton"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_alignParentBottom="true"
+        android:text="@string/go_back_button"
+        android:textColor="@color/white"
+        />
+
+</RelativeLayout>

@@ -19,6 +19,9 @@ public class GoatMainActivity extends AppCompatActivity {
         setContentView(R.layout.goat_main_activity);
 
         final MediaPlayer goatScream = MediaPlayer.create(this, R.raw.scary_scream);
+        final MediaPlayer goatSound = MediaPlayer.create(this, R.raw.goat_sound);
+
+        goatSound.start();
 
         Button deadSearchButton = findViewById(R.id.searchButton);
         Button deadAddButton = findViewById(R.id.addNumbersButton);
@@ -26,16 +29,16 @@ public class GoatMainActivity extends AppCompatActivity {
 
         deadSearchButton.setOnClickListener(v -> {
 
-            goat.setVisibility(View.VISIBLE);
             goatScream.start();
+            goat.setVisibility(View.VISIBLE);
             this.finishAffinity();
 
         });
 
         deadAddButton.setOnClickListener(v -> {
 
-            goat.setVisibility(View.VISIBLE);
             goatScream.start();
+            goat.setVisibility(View.VISIBLE);
             this.finishAffinity();
 
         });

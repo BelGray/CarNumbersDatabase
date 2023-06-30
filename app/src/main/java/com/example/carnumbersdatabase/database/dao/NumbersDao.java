@@ -21,6 +21,9 @@ public interface NumbersDao {
     @Query("SELECT * FROM numbers WHERE personCarNumbers LIKE :personCarNumbers AND personRegionCode LIKE :personRegionCode")
     LiveData<List<Numbers>> getPersonByCarNumbers(String personCarNumbers, int personRegionCode);
 
+    @Query("SELECT * FROM numbers")
+    LiveData<List<Numbers>> getAllNumbers();
+
     @Query("DELETE FROM numbers WHERE personCarNumbers LIKE :personCarNumbers AND personRegionCode LIKE :personRegionCode")
     void deletePerson(String personCarNumbers, int personRegionCode);
 

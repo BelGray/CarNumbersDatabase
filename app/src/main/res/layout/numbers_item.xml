@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="60dp"
+    android:id="@+id/numbersItemCardView"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginBottom="10dp"
+    app:cardBackgroundColor="@color/light_blue_for_text_fields"
+    >
+
+    <RelativeLayout
+        android:id="@+id/numbersItemRelativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <TextView
+            android:id="@+id/numbers"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="С777РУ"
+            android:textSize="30sp"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/black"
+            android:layout_marginStart="20dp"
+            android:textStyle="bold"
+            />
+
+        <TextView
+            android:id="@+id/region"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="777"
+            android:textSize="30sp"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_toEndOf="@+id/numbers"
+            android:textStyle="bold"
+            />
+
+        <ImageButton
+            android:id="@+id/deleteNumbersImageButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/baseline_delete_outline_24"
+            android:backgroundTint="@color/warning_red"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            />
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

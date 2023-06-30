@@ -14,7 +14,10 @@
         tools:targetApi="31">
         <activity
             android:name=".ui.MainActivity"
-            android:exported="true">
+            android:exported="true"
+            android:configChanges = "orientation"
+            android:screenOrientation = "portrait"
+            tools:ignore="LockedOrientationActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -28,13 +31,48 @@
 
         <activity
             android:name=".ui.ShowPersonInfoActivity"
-            android:exported="true" />
+            android:exported="true"
+            android:configChanges = "orientation"
+            android:screenOrientation = "portrait"
+            tools:ignore="LockedOrientationActivity"
+            />
+        <activity
+            android:name=".ui.PersonFinesActivity"
+            android:exported="true"
+            android:configChanges = "orientation"
+            android:screenOrientation = "portrait"
+            tools:ignore="LockedOrientationActivity"
+            />
 
+        <activity
+            android:name=".ui.AddPersonInfoActivity"
+            android:exported="true"
+            android:configChanges = "orientation"
+            android:screenOrientation = "portrait"
+            tools:ignore="LockedOrientationActivity"
+            />
 
-        <activity android:name=".ui.PersonFinesActivity" android:exported="true" />
-        <activity android:name=".ui.AddPersonInfoActivity" android:exported="true" />
-        <activity android:name=".ui.GoatMainActivity" android:exported="true" />
-        <activity android:name=".ui.ToFinePersonActivity" android:exported="true"/>
+        <activity
+            android:name=".ui.GoatMainActivity"
+            android:exported="true"
+            android:configChanges = "orientation"
+            android:screenOrientation = "portrait"
+            tools:ignore="LockedOrientationActivity"
+            />
+        <activity
+            android:name=".ui.ToFinePersonActivity"
+            android:exported="true"
+            android:configChanges = "orientation"
+            android:screenOrientation = "portrait"
+            tools:ignore="LockedOrientationActivity"
+            />
+        <activity
+            android:name=".ui.NumbersListActivity"
+            android:exported="true"
+            android:configChanges = "orientation"
+            android:screenOrientation = "portrait"
+            tools:ignore="LockedOrientationActivity"
+            />
     </application>
 
 </manifest>

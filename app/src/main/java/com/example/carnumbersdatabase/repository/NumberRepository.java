@@ -38,6 +38,10 @@ public class NumberRepository {
         return numbersDao.getPersonByCarNumbers(personCarNumbers, personRegionCode);
     }
 
+    public LiveData<List<Numbers>> getAllNumbers() {
+        return numbersDao.getAllNumbers();
+    }
+
     public void setPersonWithLicense(String personCarNumbers, int personRegionCode, boolean personHasLicense){
         service.execute(() -> numbersDao.setPersonWithLicense(personCarNumbers, personRegionCode, personHasLicense));
     }

@@ -12,7 +12,7 @@
     <string name="person_birthdate">Дата рождения (необязательно)</string>
     <string name="person_fines">Штрафы</string>
     <string name="person_to_fine">Оштрафовать</string>
-    <string name="person_phone_number">Номер телефона *</string>
+    <string name="person_phone_number">Номер телефона (необязательно)</string>
     <string name="person_fine_text">Нарушение</string>
     <string name="person_fine_amount">Сумма к оплате</string>
     <string name="person_fine_is_payed">Оплачен</string>
@@ -26,7 +26,8 @@
     <string name="person_without_violation">Нарушений ПДД не имеется</string>
     <string name="person_with_violation">Гражданин нарушал ПДД</string>
     <string name="person_loading_status">Статус гражданина</string>
-    <string name="person_transport_name">Транспортное средство *</string>
-    <string name="person_without_license_warning">Внимание! У гражданина отсутствует водительское удостоверение</string>
+    <string name="person_transport_name">Транспортное средство (марка, модель) *</string>
+    <string name="person_without_license_warning">У гражданина отсутствуют водительские права!</string>
     <string name="delete">Удалить</string>
+    <string name="numbersList">Все номера</string>
 </resources>

@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -13,6 +14,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.example.carnumbersdatabase.R;
+import com.example.carnumbersdatabase.ui.adapter.FineAdapter;
 import com.example.carnumbersdatabase.ui.viewModel.FineViewModel;
 import com.example.carnumbersdatabase.ui.viewModel.NumberViewModel;
 import com.google.android.material.textfield.TextInputLayout;
@@ -84,12 +86,12 @@ public class ShowPersonInfoActivity extends AppCompatActivity {
 
         saveButton.setOnClickListener(v -> {
 
-            String personName = personNameEditText.getEditText().getText().toString().trim();
-            String personLastname = personLastnameEditText.getEditText().getText().toString().trim();
-            String personBirthdate = personBirthdateEditText.getEditText().getText().toString().trim();
+            String personName = personNameEditText.getEditText().getText().toString().replaceAll("\\s", "");
+            String personLastname = personLastnameEditText.getEditText().getText().toString().replaceAll("\\s", "");
+            String personBirthdate = personBirthdateEditText.getEditText().getText().toString().replaceAll("\\s", "");
             String personAddress = personAddressEditText.getEditText().getText().toString().trim();
             String personTransport = personTransportNameEditText.getEditText().getText().toString().trim();
-            String personPhone = personPhoneNumberEditText.getEditText().getText().toString().trim();
+            String personPhone = personPhoneNumberEditText.getEditText().getText().toString().replaceAll("\\s", "");
 
             boolean nameChecker;
             boolean lastnameChecker;
@@ -133,7 +135,7 @@ public class ShowPersonInfoActivity extends AppCompatActivity {
             }
 
 
-            if (personPhone.length() < 10 || personPhone.length() != 12 && personPhone.startsWith("+7") || personPhone.length() != 11 && personPhone.startsWith("8")){
+            if (!personPhone.isEmpty() && personPhone.length() < 10 || personPhone.length() != 12 && personPhone.startsWith("+7") || personPhone.length() != 11 && personPhone.startsWith("8")){
                 phoneChecker = false;
                 personPhoneNumberEditText.setError("Заполните номер телефона корректно");
             } else {
@@ -163,6 +165,7 @@ public class ShowPersonInfoActivity extends AppCompatActivity {
 
         deleteButton.setOnClickListener(v -> {
             numberVM.deletePerson(carNumbers, Integer.parseInt(regionCode));
+            fineVM.deletePerson(carNumbers + regionCode);
             startActivity(goMainActivity);
             Toast.makeText(ShowPersonInfoActivity.this, "Данные о номерах удалены!", Toast.LENGTH_SHORT).show();
         });

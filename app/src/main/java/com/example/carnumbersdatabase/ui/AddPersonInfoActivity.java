@@ -45,12 +45,12 @@ public class AddPersonInfoActivity extends AppCompatActivity {
             String carNumbers = intent.getStringExtra("carNumbers");
             String regionCode = intent.getStringExtra("regionCode");
 
-            String personName = personNameEditText.getEditText().getText().toString().trim();
-            String personLastname = personLastnameEditText.getEditText().getText().toString().trim();
-            String personBirthdate = personBirthdateEditText.getEditText().getText().toString().trim();
+            String personName = personNameEditText.getEditText().getText().toString().replaceAll("\\s", "");
+            String personLastname = personLastnameEditText.getEditText().getText().toString().replaceAll("\\s", "");
+            String personBirthdate = personBirthdateEditText.getEditText().getText().toString().replaceAll("\\s", "");
             String personAddress = personAddressEditText.getEditText().getText().toString().trim();
             String personTransport = personTransportNameEditText.getEditText().getText().toString().trim();
-            String personPhone = personPhoneNumberEditText.getEditText().getText().toString().trim();
+            String personPhone = personPhoneNumberEditText.getEditText().getText().toString().replaceAll("\\s", "");
 
             boolean nameChecker;
             boolean lastnameChecker;
@@ -94,7 +94,7 @@ public class AddPersonInfoActivity extends AppCompatActivity {
             }
 
 
-            if (personPhone.length() < 10 || personPhone.length() != 12 && personPhone.startsWith("+7") || personPhone.length() != 11 && personPhone.startsWith("8")){
+            if (personPhone.length() != 12 && personPhone.startsWith("+7") || personPhone.length() != 11 && personPhone.startsWith("8")){
                 phoneChecker = false;
                 personPhoneNumberEditText.setError("Заполните номер телефона корректно");
             } else {

@@ -27,10 +27,9 @@ public class MainActivity extends AppCompatActivity {
 
         NumberViewModel numberViewModel = new ViewModelProvider(this).get(NumberViewModel.class);
 
-        Pattern cyrillic = Pattern.compile("^[а-яА-Я]+$");
-        Pattern latin = Pattern.compile("^[a-zA-Z]+$");
         String rangeRegex = "[0-9]+";
 
+        Button numbersListButton = findViewById(R.id.numbersListButton);
         Button searchButton = findViewById(R.id.searchButton);
         Button addNumbersButton = findViewById(R.id.addNumbersButton);
         TextInputLayout searchCarNumbersEditText = findViewById(R.id.searchCarNumbersEditText);
@@ -38,20 +37,22 @@ public class MainActivity extends AppCompatActivity {
         TextView searchNumbersTextView = findViewById(R.id.searchNumbersTextView);
 
         searchButton.setOnClickListener(v -> {
-            String regionCode = searchRegionCodeEditText.getEditText().getText().toString().trim();
-            String carNumbers = searchCarNumbersEditText.getEditText().getText().toString().trim();
-
-            Matcher carNumbersCyrillic = cyrillic.matcher(carNumbers);
-            Matcher carNumbersLatin = latin.matcher(carNumbers);
-
-            boolean searchCarNumbersFieldStatusOk;
-            boolean searchRegionCodeFieldStatusOk;
+            String regionCode = searchRegionCodeEditText.getEditText().getText().toString().replaceAll("\\s", "");
+            String carNumbers = searchCarNumbersEditText.getEditText().getText().toString().replaceAll("\\s", "");
 
             if (carNumbers.equalsIgnoreCase("666") && regionCode.equalsIgnoreCase("666")){
 
                 startActivity(new Intent(MainActivity.this, GoatMainActivity.class));
+                return;
 
             }
+
+            boolean carNumbersFirstChar = carNumbers.length() > 0 && Character.isLetter(carNumbers.charAt(0));
+            boolean carNumbersSecondChars = carNumbers.length() >= 4 && Character.isLetter(carNumbers.charAt(4));
+            boolean carNumbersThirdChars = carNumbers.length() >= 5 && Character.isLetter(carNumbers.charAt(5));
+
+            boolean searchCarNumbersFieldStatusOk;
+            boolean searchRegionCodeFieldStatusOk;
 
             if (regionCode.isEmpty() || regionCode.length() > 3) {
                 searchRegionCodeFieldStatusOk = false;
@@ -62,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
             }
 
 
-            if (carNumbers.length() != 6 || !carNumbersCyrillic.find() && carNumbersLatin.find() || carNumbersLatin.find() || !(carNumbers.substring(1, 4).matches(rangeRegex)) || carNumbers.matches(rangeRegex)) {
+            if (carNumbers.length() != 6 || !carNumbersFirstChar || !carNumbersSecondChars || !carNumbersThirdChars || !(carNumbers.substring(1, 4).matches(rangeRegex)) || carNumbers.matches(rangeRegex)) {
                 searchCarNumbersFieldStatusOk = false;
                 searchCarNumbersEditText.setError("Некорректные номера автомобиля. Пример: C777PУ");
             } else {
@@ -96,13 +97,20 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        numbersListButton.setOnClickListener(v -> {
+
+            startActivity(new Intent(MainActivity.this, NumbersListActivity.class));
+
+        });
+
         addNumbersButton.setOnClickListener(v -> {
 
             String regionCode = searchRegionCodeEditText.getEditText().getText().toString().trim();
             String carNumbers = searchCarNumbersEditText.getEditText().getText().toString().trim();
 
-            Matcher carNumbersCyrillic = cyrillic.matcher(carNumbers);
-            Matcher carNumbersLatin = latin.matcher(carNumbers);
+            boolean carNumbersFirstChar = carNumbers.length() > 0 && Character.isLetter(carNumbers.charAt(0));
+            boolean carNumbersSecondChars = carNumbers.length() >= 4 && Character.isLetter(carNumbers.charAt(4));
+            boolean carNumbersThirdChars = carNumbers.length() >= 5 && Character.isLetter(carNumbers.charAt(5));
 
             boolean searchCarNumbersFieldStatusOk;
             boolean searchRegionCodeFieldStatusOk;
@@ -116,7 +124,7 @@ public class MainActivity extends AppCompatActivity {
             }
 
 
-            if (carNumbers.length() != 6 || !carNumbersCyrillic.find() && carNumbersLatin.find() || carNumbersLatin.find() || !(carNumbers.substring(1, 4).matches(rangeRegex)) || carNumbers.matches(rangeRegex)) {
+            if (carNumbers.length() != 6 || !carNumbersFirstChar || !carNumbersSecondChars || !carNumbersThirdChars || !(carNumbers.substring(1, 4).matches(rangeRegex)) || carNumbers.matches(rangeRegex)) {
                 searchCarNumbersFieldStatusOk = false;
                 searchCarNumbersEditText.setError("Некорректные номера автомобиля. Пример: C777PУ");
             } else {
