@@ -27,7 +27,7 @@ public interface NumbersDao {
     @Query("DELETE FROM numbers WHERE personCarNumbers LIKE :personCarNumbers AND personRegionCode LIKE :personRegionCode")
     void deletePerson(String personCarNumbers, int personRegionCode);
 
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    @Insert(onConflict = OnConflictStrategy.ROLLBACK)
     void insert(Numbers numbers);
 
     @Query("UPDATE numbers SET personHasLicense = :personHasLicense WHERE personCarNumbers LIKE :personCarNumbers AND personRegionCode LIKE :personRegionCode")

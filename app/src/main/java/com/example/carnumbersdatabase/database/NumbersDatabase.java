@@ -14,7 +14,7 @@ import com.example.carnumbersdatabase.model.Numbers;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-@Database(entities = Numbers.class, version = 2)
+@Database(entities = Numbers.class, version = 3)
 public abstract class NumbersDatabase extends RoomDatabase {
 
     private static NumbersDatabase instance;
